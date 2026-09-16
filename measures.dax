@@ -1,0 +1,17 @@
+Net Revenue = DIVIDE(SUM(Sales[net_revenue_cents]), 100)
+
+Gross Profit = DIVIDE(SUM(Sales[profit_cents]), 100)
+
+Gross Margin = DIVIDE([Gross Profit], [Net Revenue])
+
+Orders = DISTINCTCOUNT(Sales[order_id])
+
+Average Order Value = DIVIDE([Net Revenue], [Orders])
+
+Return Line Rate = DIVIDE(SUM(Sales[returned]), COUNTROWS(Sales))
+
+Revenue Previous Year = CALCULATE([Net Revenue], DATEADD('Date'[Date], -1, YEAR))
+
+Revenue YoY = DIVIDE([Net Revenue] - [Revenue Previous Year], [Revenue Previous Year])
+
+Loss Making Lines = COUNTROWS(FILTER(Sales, Sales[profit_cents] < 0))

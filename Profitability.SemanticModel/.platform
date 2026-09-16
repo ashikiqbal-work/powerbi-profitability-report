@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Profitability"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c1e7d21e-0141-59cf-83e5-57a1fa616c40"
+  }
+}

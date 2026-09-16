@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Profitability"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "64336fa5-0def-5a5c-bac2-73519806db05"
+  }
+}
