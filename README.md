@@ -34,9 +34,33 @@ Furniture leads revenue but has a lower gross margin than Technology and Office 
 
 ## Validation status
 
-The report has been opened with populated visuals in Power BI Desktop, as shown in the project owner's screenshot above. All five report visuals render without visible error messages. The cards display $1.18M net revenue, $356.73K gross profit and 30.3% gross margin, consistent with the rounded source control totals.
+Verified directly in Power BI Desktop on September 16, 2026:
 
-The Orders card uses automatic display units and shows 2K; this rounded label does not verify the exact 1,800 orders. Exact-value reconciliation and filter-interaction testing in Desktop remain to be checked. Source-data totals and model bindings have been checked, and Microsoft's report authoring validator passed with zero errors and zero warnings.
+- **Refresh:** completed successfully; all five report visuals rendered without visible errors.
+- **Live DAX reconciliation:** net revenue $1,179,262.25; gross profit $356,734.25; gross margin 30.2506%; exactly 1,800 orders; 3,538 order lines; 186 returned lines; 61 loss-making lines. All match the source controls.
+- **Cross-filtering:** selecting Furniture updated the KPI cards, monthly trend, product chart and regional chart. Revenue displayed $648.19K, profit $163.96K and margin 25.3%; the product chart narrowed to Chair and Desk. Clearing the selection restored the full dataset.
+- **Persistence:** saved in the existing project format, closed and reopened successfully with populated visuals and the original overall totals.
+
+The Orders card uses automatic display units and shows 2K. This is display rounding; the live DAX measure returns 1,800.
+
+Microsoft's report authoring validator also passed with zero errors and zero warnings.
+
+### Reproduce the exact-value check
+
+Run this in Power BI Desktop's DAX query view after refreshing:
+
+```dax
+EVALUATE
+ROW(
+    "Revenue", FORMAT([Net Revenue], "#,##0.00"),
+    "Profit", FORMAT([Gross Profit], "#,##0.00"),
+    "Margin", FORMAT([Gross Margin], "0.0000%"),
+    "Orders", [Orders],
+    "Lines", COUNTROWS(Sales),
+    "Returns", SUM(Sales[returned]),
+    "Loss Lines", [Loss Making Lines]
+)
+```
 
 ## References
 
