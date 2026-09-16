@@ -2,6 +2,8 @@
 
 A Power BI project with an editable semantic model, DAX measures and five data-bound visuals for exploring revenue, margin, products and regions.
 
+![Report displayed in Power BI Desktop](report-preview.png)
+
 ## Open the report
 
 1. Download the complete repository ZIP and extract all files together.
@@ -32,7 +34,9 @@ Furniture leads revenue but has a lower gross margin than Technology and Office 
 
 ## Validation status
 
-The report definition passes Microsoft's authoring validator with zero errors and zero warnings. Source-data totals and model bindings have been checked. Desktop refresh, DAX results and the rendered report still await validation.
+The report has been opened with populated visuals in Power BI Desktop, as shown in the project owner's screenshot above. All five report visuals render without visible error messages. The cards display $1.18M net revenue, $356.73K gross profit and 30.3% gross margin, consistent with the rounded source control totals.
+
+The Orders card uses automatic display units and shows 2K; this rounded label does not verify the exact 1,800 orders. Exact-value reconciliation and filter-interaction testing in Desktop remain to be checked. Source-data totals and model bindings have been checked, and Microsoft's report authoring validator passed with zero errors and zero warnings.
 
 ## References
 
