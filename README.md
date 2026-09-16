@@ -32,7 +32,7 @@ Furniture leads revenue but has a lower gross margin than Technology and Office 
 
 ## Validation status
 
-Microsoft's Power BI report authoring validator passed with zero errors and zero warnings. Source controls and model bindings are checked. Power BI Desktop was launched, but its automation bridge was unavailable, so a live refresh, DAX execution and rendered report check could not be completed. This is a schema-validated PBIP source project, not a verified PBIX export. Complete the refresh/control check above before using a screenshot in your portfolio.
+The report definition passes Microsoft's authoring validator with zero errors and zero warnings. Source-data totals and model bindings have been checked. Desktop refresh, DAX results and the rendered report still await validation.
 
 ## References
 
@@ -63,4 +63,10 @@ This is a synthetic learning project, not client work or evidence of real busine
 | Returned lines | 186 |
 | Loss-making lines | 61 |
 
-The SQL, Excel and Power BI portfolio projects intentionally reuse the same fictional business, but each is self-contained and demonstrates a different tool. Do not describe the three as separate client engagements.
+## One case study, three tools
+
+These three projects use the same fictional retail dataset to show different tools. Each repository can be explored independently.
+
+- [SQL: customer and sales analysis](https://github.com/ashikiqbal-work/sql-retail-analysis)
+- [Excel: sales dashboard](https://github.com/ashikiqbal-work/excel-sales-dashboard)
+- [Power BI: profitability report](https://github.com/ashikiqbal-work/powerbi-profitability-report)
